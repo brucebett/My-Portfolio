@@ -1,4 +1,8 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
+from django.contrib import messages
+
 
 # Create your views here.
 def signup(request):
@@ -6,19 +10,19 @@ def signup(request):
         get_email = request.POST.get('email')
         get_password = request.POST.get('pass1')
         get_confirm_password = request.POST.get('pass2')
-        if get_password ≠ get_confirm_password:
+        if get_password != get_confirm_password:
             messages.info(request, "Password is not macthing")
-            return redirect('/auth/singup')
+            return redirect('/auth/singup/')
         try:
-            if user.objects.get(username=get_email):
+            if User.objects.get(username=get_email):
                 messages.warning(request, "Email is taken")
                 return redirect('/auth/signup/')
         except Exception as identifier:
             pass
         myuser=User.objects.create_user(get_email,get_email,get_password)
         myuser.save()
-        messages.success(request)
-
+        messages.success(request,'User is created Please Login')
+        return redirect('/auth/login/')
     
         
     return render(request, 'signup.html')  
