@@ -24,12 +24,12 @@ login
                     {% csrf_token %}
             <div class="form-group">
                 <h5><span><i class="bi bi-envelope navicon"></i> Email</span></h5>
-                <input type="text" class="form-control mb-3">
+                <input type="text" class="form-control mb-3" name="email" relative>
                  
             </div>
             <div class="form-group">
                 <h5><span><i class="bi bi-lock navicon"></i> Password</span></h5>
-                <input type="text" class="form-control mb-3">
+                <input type="text" class="form-control mb-3" name="password" required>
                  
             </div>
 
