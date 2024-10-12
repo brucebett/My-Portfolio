@@ -12,7 +12,7 @@ def signup(request):
         get_confirm_password = request.POST.get('pass2')
         if get_password != get_confirm_password:
             messages.info(request, "Password is not macthing")
-            return redirect('/auth/singup/')
+            return redirect('/auth/signup/')
         try:
             if User.objects.get(username=get_email):
                 messages.warning(request, "Email is taken")
@@ -28,7 +28,21 @@ def signup(request):
     return render(request, 'signup.html')  
 
 def handleLogin(request):
-    return render(request, 'login.html')
+        if request.method == "POST":
+         get_email = request.POST.get('email')
+         get_password = request.POST.get('pass1') 
+         myuser = authenticate(username=get_email,password=get_password)
+
+         if myuser is not None:
+             login(request, myuser)
+             messages.success(request, "Login Success")
+             return redirect('/')
+         else:
+             messages.success(request, "Invalid Credintials")
+        return render(request, 'login.html')
 
 def handleLogout(request):
+    logout(request)
+    messages.success(request, 'Logout Success')
+
     return render(request, 'login.html')
