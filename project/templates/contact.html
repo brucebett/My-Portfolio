@@ -30,13 +30,26 @@ contact
                 <form action="/auth/login/" method="post">
                     {% csrf_token %}
             <div class="form-group">
-                <h5><span><i class="bi bi-envelope navicon"></i> Email</span></h5>
+                <h5><span><i class="bi bi-person navicon"></i> Name</span></h5>
                 <input type="email" class="form-control mb-3" name="email" required>
                  
             </div>
+
             <div class="form-group">
-                <h5><span><i class="bi bi-lock navicon"></i> Password</span></h5>
-                <input type="password" class="form-control mb-3" name="pass1" required>
+                <h5><span><i class="bi bi-envelope navicon"></i> Email</span></h5>
+                <input type="text" class="form-control mb-3" name="name" required>
+                 
+            </div>
+
+            <div class="form-group">
+                <h5><span><i class="bi bi-telephone navicon"></i> Phonenumber</span></h5>
+                <input type="number" class="form-control mb-3" name="num" required>
+                 
+            </div>
+
+            <div class="form-group">
+                <h5><span><i class="bi bi-chat-text navicon"></i> How can i help you today?</span></h5>
+                <textarea type="text" class="form-control mb-3" name="description" required></textarea>
                  
             </div>
 
