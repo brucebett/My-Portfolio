@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from portfolio.models import Contact
 
 
 # Create your views here.
@@ -11,11 +12,13 @@ def about(request):
 
 def contact(request):
     if request.method=="POST":
-        name=request.POST.get('name')
-        email=request.POST.get('email')
-        phonenumber=request.POST.get('num')
-        desc=request.POST.get('desc')
-        messages.info(request, f'the name is {name} ,email is {email} ,your number is {phonenumber} adn your query is {desc}')
+        fname=request.POST.get('name')
+        femail=request.POST.get('email')
+        fphonenumber=request.POST.get('num')
+        fdescription=request.POST.get('desc')
+        query=Contact(name=fname,email=femail,phonenumber=fphonenumber,description=fdescription)
+        query.save()
+        messages.success(request, "Thanks for contacting us.We will get to you Soon!")
 
         return redirect('/contact')
     
