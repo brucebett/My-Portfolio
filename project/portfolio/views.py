@@ -7,6 +7,9 @@ from portfolio.models import Contact
 def home(request):
     return render(request, 'home.html')  
 
+def handleblog(request):
+    return render(request, ' blog.html')
+
 def about(request):
     return render(request, 'about.html')
 
