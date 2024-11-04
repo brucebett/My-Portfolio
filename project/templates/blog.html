@@ -2,6 +2,7 @@
 {% block tittle %}Blog{% endblock tittle %}
 
 {% block body %}
+{% load static %}
 <section id="services" class="services">
     <div class="container">
 
@@ -11,16 +12,21 @@
       </div>
 
       <div class="row">
+{% for post in posts %}
 
         <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="{{post.img.url}}" class="img-fluid" alt="">
+          </div>     
+
           <div class="icon"><i class="bi bi-android"></i></div>
-          <h4 class="title"><a href="" style="text-decoration: underline">Android Development</a></h4>
-          <p class="description" style="font-family: 'Liberation Serif';font-size: 17px">*Custom Android app development tailored to clients' specific needs. <br>
-          *Integration of advanced features such as GPS, push notifications, in-app purchases, etc. <br>
-          *Maintenance and support services to keep applications up-to-date and running smoothly.</p>
+          <h4 class="title"><a href="" style="text-decoration: underline">{{post.title}}</a></h4>
+          <p class="description" style="font-family: 'Liberation Serif';font-size: 17px">{{post.description}}</p>
+          <h6 style="font-family: 'Liberation Serif';font-size: 17px"> Posted By: <b>{{post.authname}}</b></h6>
+          <h6 style="font-family: 'Liberation Serif';font-size: 17px"> Posted On: <b>{{post.timeStamp}}</b></h6>
         </div>
 
-
+{% endfor %}
 
       </div>
 
