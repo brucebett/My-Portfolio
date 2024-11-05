@@ -7,6 +7,9 @@ from portfolio.models import Contact,Blogs
 def home(request):
     return render(request, 'home.html')  
 
+def handleservices(request):
+    return render(request, 'services.html') 
+
 def handleblog(request):
     posts=Blogs.objects.all()
     context={"posts":posts}
