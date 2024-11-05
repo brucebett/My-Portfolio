@@ -56,26 +56,28 @@
 
     <div class="social-links text-center">
       <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.facebook.com/BettBriann" class="facebook"><i class="bi bi-facebook"></i></a>
       <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
       <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.linkedin.com/in/brian-bett-63788a285/" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="/" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="/about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="/blog"><i class="bi bi-images navicon"></i> Blog</a></li>
+
         {% comment %} <li><a href="/resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li> {% endcomment %}
         {% comment %} <li><a href="/portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li> {% endcomment %}
         {% comment %} <li><a href="/services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li> {% endcomment %}
-        <li><a href="/contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
 
         {% if  not request.user.is_authenticated%}
         <li><a href="/auth/login/"><i class="bi bi-person navicon"></i> Login</a></li>
         <li><a href="/auth/signup/"><i class="bi bi-person navicon"></i> SingUp</a></li>
         {% else %}
+        <li><a href="/" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="/about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="/blog"><i class="bi bi-images navicon"></i> Blog</a></li>
+        <li><a href="/contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+
         <li><a href="/auth/logout/"><i class="bi bi-person navicon"></i> Logout</a></li>
 
         {% endif %}
