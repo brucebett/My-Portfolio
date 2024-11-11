@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from portfolio.models import Contact,Blogs
+from portfolio.models import Contact,Blogs,Internship
 
 
 # Create your views here.
@@ -11,6 +11,29 @@ def handleservices(request):
     return render(request, 'services.html') 
 
 def internshipdetails(request):
+    if request.method=="POST":
+        fname=request.POST.get('name')
+        femail=request.POST.get('email')    
+        fusn=request.POST.get('usn')    
+        fcolege=request.POST.get('cname')    
+        foffer=request.POST.get('offer')    
+        fstartdate=request.POST.get('sartdate')    
+        fenddate=request.POST.get('enddate')    
+        fprojreport=request.POST.get('projreport')  
+
+# conecting to uppercase
+        fname=fname.upper()  
+        fusn=fusn.upper()  
+        fcolege=fcolege.upper()  
+        foffer=foffer.upper()  
+        fprojreport=fprojreport.upper()  
+
+        query=Internship(fullname=fname,usn=fusn,email=femail,college_name=fcolege,offer_status=foffer,
+                         start_date=fstartdate,end_date=fenddate,project_report=fprojreport)
+        query.save()
+        messages.success(request, "Form is Submitted Successfuly!")
+        return redirect('/internshipdetails')
+
     return render(request, 'internship.html') 
 
 def handleblog(request):
