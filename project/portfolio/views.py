@@ -32,6 +32,13 @@ def internshipdetails(request):
         foffer=foffer.upper()  
         fprojreport=fprojreport.upper()  
 
+        check1=Internship.objects.filter(usn=fusn)
+        check2=Internship.objects.filter(email=femail)
+
+        if check1 or check2:
+            messages.warning(request, "Your Details are already Present")
+            return redirect("/internshipdetails")
+
         query=Internship(fullname=fname,usn=fusn,email=femail,college_name=fcolege,offer_status=foffer,
                          start_date=fstartdate,end_date=fenddate,project_report=fprojreport)
         query.save()
