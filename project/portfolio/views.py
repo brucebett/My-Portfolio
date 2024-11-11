@@ -10,6 +10,9 @@ def home(request):
 def handleservices(request):
     return render(request, 'services.html') 
 
+def internshipdetails(request):
+    return render(request, 'internship.html') 
+
 def handleblog(request):
     posts=Blogs.objects.all()
     context={"posts":posts}
