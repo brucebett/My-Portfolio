@@ -11,6 +11,10 @@ def handleservices(request):
     return render(request, 'services.html') 
 
 def internshipdetails(request):
+    if not request.user.is_authenticated:
+        messages.warning(request, "Please login to access this page")
+        return redirect("/auth/login/")
+    
     if request.method=="POST":
         fname=request.POST.get('name')
         femail=request.POST.get('email')    
