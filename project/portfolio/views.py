@@ -10,6 +10,9 @@ def home(request):
 def handleservices(request):
     return render(request, 'services.html') 
 
+def resume(request):
+    return render(request, 'resume.html') 
+
 def internshipdetails(request):
     if not request.user.is_authenticated:
         messages.warning(request, "Please login to access this page")
