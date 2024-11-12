@@ -13,6 +13,9 @@ def handleservices(request):
 def resume(request):
     return render(request, 'resume.html') 
 
+def skills(request):
+    return render(request, 'skills.html') 
+
 def internshipdetails(request):
     if not request.user.is_authenticated:
         messages.warning(request, "Please login to access this page")
