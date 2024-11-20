@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from portfolio.models import Contact,Blogs,Internship
+from portfolio.models import Contact
 
 
 # Create your views here.
