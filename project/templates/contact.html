@@ -8,66 +8,87 @@ contact
 
 
 {% block body %}
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-4"></div>
 
-        <div class="col-md-4">
-            <br>
-            <br>
-            <br>
-            <br>
-            <h3 class="text-white bg-dark text-center p-3">Contact Us</h3>
+<section id="contact" class="contact">
+    <div class="container">
 
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p style="font-weight: 500;font-family: 'Courier 10 Pitch';color: #fcfcfd">Contact Me</p>
+      </div>
 
-            {% for message in messages %}
-            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-                <strong> {{message}} </strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              {% endfor %}            
-            <div class="card" p-2>
-                <form action="/contact/" method="post">
-                    {% csrf_token %}
-            <div class="form-group">
-                <h5><span><i class="bi bi-person navicon"></i> Name</span></h5>
-                <input type="text" class="form-control mb-3" name="name" required>
-                 
-            </div>
+      <div class="row mt-2">
 
-            <div class="form-group">
-                <h5><span><i class="bi bi-envelope navicon"></i> Email</span></h5>
-                <input type="email" value="{{user.email}}" class="form-control mb-3" name="email" required >
-                 
-            </div>
-
-            <div class="form-group">
-                <h5><span><i class="bi bi-telephone navicon"></i> Phonenumber</span></h5>
-                <input type="number" class="form-control mb-3" name="num" required>
-                 
-            </div>
-
-            <div class="form-group">
-                <h5><span><i class="bi bi-chat-text navicon"></i> How can i help you today?</span></h5>
-                <textarea type="text" class="form-control mb-3" name="desc" required></textarea>
-                 
-            </div>
-
-            <div class="d-grid gap-2">
-                <button class="btn btn-dark" type="submit">Submit</button>
-              </div>
-
-            </div>
-             
-        </form>
-
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-map"></i>
+            <h3>My Address</h3>
+            <p>Nairobi City ,Westlands 00100</p>
+          </div>
         </div>
 
-        <div class="col-md-4"></div>
+        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-share-alt"></i>
+            <h3>Social Profiles</h3>
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-envelope"></i>
+            <h3>Email Me</h3>
+            <p><a href="">brianbett312@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 d-flex align-items-stretch">
+          <div class="info-box">
+            <i class="bx bx-phone-call"></i>
+            <h3>Call Me</h3>
+            <p><a href="">+254735462380</a></p>
+          </div>
+        </div>
+      </div>
+
+      {% for message in messages %}
+      <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+          <strong> {{message}} </strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}    
+
+      <form action="/contact/" method="post" role="form" class="php-email-form mt-4">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name " required style="border-radius: 9px;background-color: transparent;border: solid">
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0" >
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email " required style="border-radius: 9px;background-color: transparent;border: solid">
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <input type="number" class="form-control" name="num" id="number" placeholder="phone Number " required style="border-radius: 9px;background-color: transparent;border: solid">
+        </div>
+        <div class="form-group mt-3">
+          <textarea type="text" class="form-control" name="desc" rows="5" placeholder="How can i help you today? " required style="border-radius: 9px;background-color: transparent;border: solid"></textarea>
+        </div>
+
+       <br>
+       <br>
+        <div class="text-center"><button type="submit">Send Message</button></div>
+      </form>
 
     </div>
+  </section>
 
-</div>      
 {% endblock body %}
 
 
