@@ -32,3 +32,4 @@ def contact(request):
         return redirect('/contact')
     
     return render(request, 'contact.html')
+ 
