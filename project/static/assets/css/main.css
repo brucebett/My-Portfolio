@@ -7,7 +7,7 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
+  --default-color: #490e4a; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -129,9 +129,14 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
+
+#header {
+  --background-color: purple; /* Set the background color to purple only for the header */
+}
+
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #490e4a;
   position: fixed;
   top: 0;
   left: 0;
@@ -353,7 +358,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: #490e4a !important;
   font-size: 14px;
   padding: 40px 0;
   position: relative;
