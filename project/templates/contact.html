@@ -9,18 +9,18 @@ contact
 
 {% block body %}
 
-<section id="contact" class="contact">
-    <div class="container">
+<section id="contact" class="contact" style="background-color: white">  
+    <div class="container" >  
 
       <div class="section-title">
         <h2>Contact</h2>
-        <p style="font-weight: 500;font-family: 'Courier 10 Pitch';color: #fcfcfd">Contact Me</p>
+        <p style="font-weight: 500;font-family: 'Courier 10 Pitch'; color:black;">Contact Me</p>
       </div>
 
       <div class="row mt-2">
 
         <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
+          <div class="info-box" style="background-color: black">
             <i class="bx bx-map"></i>
             <h3>My Address</h3>
             <p>Nairobi City ,Westlands 00100</p>
@@ -28,7 +28,7 @@ contact
         </div>
 
         <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
+          <div class="info-box" style="background-color: black">
             <i class="bx bx-share-alt"></i>
             <h3>Social Profiles</h3>
             <div class="social-links">
@@ -42,14 +42,14 @@ contact
         </div>
 
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
+          <div class="info-box" style="background-color: black">
             <i class="bx bx-envelope"></i>
             <h3>Email Me</h3>
             <p><a href="">brianbett312@gmail.com</a></p>
           </div>
         </div>
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
+          <div class="info-box" style="background-color: black">
             <i class="bx bx-phone-call"></i>
             <h3>Call Me</h3>
             <p><a href="">+254735462380</a></p>
@@ -66,7 +66,7 @@ contact
         </div>
         {% endfor %}    
 
-      <form action={% url "contact" %} method="post" role="form" class="php-email-form mt-4">
+      <form action={% url "contact" %} method="post" role="form" class="php-email-form mt-4" style="background-color: black">
         {% csrf_token %}
         <div class="row">
           <div class="col-md-6 form-group">
