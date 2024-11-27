@@ -7,7 +7,7 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #490e4a; /* Default color used for the majority of the text content across the entire website */
+  --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -692,7 +692,7 @@ section,
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid var(--accent-color);
+  border-left: 4px solid #24052f;
   position: relative;
 }
 
@@ -733,8 +733,8 @@ section,
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: var(--background-color);
-  border: 2px solid var(--accent-color);
+  background: #24052f;
+  border: 3px solid #24052f;
 }
 
 
