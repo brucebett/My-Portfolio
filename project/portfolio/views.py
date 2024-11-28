@@ -23,9 +23,9 @@ def contact(request):
     if request.method=="POST":
         fname=request.POST.get('name')
         femail=request.POST.get('email')
-        fphonenumber=request.POST.get('num')
-        fdescription=request.POST.get('desc')
-        query=Contact(name=fname,email=femail,num=fphonenumber,desc=fdescription)
+        fphonenumber=request.POST.get('phonenumber')
+        fdescription=request.POST.get('description')
+        query=Contact(name=fname,email=femail,phonenumber=fphonenumber,description=fdescription)
         query.save()
         messages.success(request, "Thanks for contacting us.We will get to you Soon!")
 
