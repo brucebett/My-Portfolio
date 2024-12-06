@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Contact(models.Model):
-    name=models.CharField(max_length=25)
+    name=models.CharField(max_length=250)
     email=models.EmailField()
-    phonenumber=models.CharField(max_length=10)
+    subject=models.CharField(max_length=100)
     description=models.TextField()
 
 
